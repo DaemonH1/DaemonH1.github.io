@@ -1,7 +1,88 @@
 body {
-        background-color: #949ca6;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #121212;
+  color: white;
+  text-align: center;
     }
-em {
-        color: #601c2e;
-        font-style: normal;
+
+nav{
+  background-color: #1f1f1f;
+  padding: 15px;
+}
+
+nav a{
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+}
+
+nav a:hover{
+  text-decoration: underline;
+}
+
+section{
+  margin: 40px 0;
+}
+
+img{
+  border-radius: 8px;
+}
+
+/* Resume css */
+.profile {
+  float: left;
+  width: 250px;
+  margin-right: 20px;
+}
+
+#ead {
+ font-size:large;
+}
+.experience {
+  display: block;
+}
+/* Gallery css */
+.cd{
+  display:inline-block;
+  width:400px;
+  text-align:center;
+  margin:10px;
+}
+
+.cd audio {
+  width:100%;
+}
+/* Contact css */
+section.contact {
+  max-width: 600px;
+  margin: 40px auto;
+  text-align: left;
+}
+
+  form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input, textarea, button {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+input, textarea {
+  width: 100%;
+}
+
+button {
+  width: 100px;
+  background-color: #00aaff;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0088cc;
 }
