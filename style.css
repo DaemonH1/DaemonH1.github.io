@@ -1,13 +1,13 @@
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  background-color: #121212;
+  background-color: #696969a4;
   color: white;
   text-align: center;
     }
 
 nav{
-  background-color: #1f1f1f;
+  background-color: #696969a4;
   padding: 15px;
 }
 
@@ -42,6 +42,7 @@ img{
 .experience {
   display: block;
 }
+
 /* Gallery css */
 .cd{
   display:inline-block;
