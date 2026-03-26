@@ -56,21 +56,21 @@ function street(user, hasPhone) {
 
     switch (choice) {
         case "1":
-            if (!hasPhone) {
-                console.log("You check your pocket...");
-                console.log("Your phone is missing. You must have dropped it.");
-            } else {
+            if (hasPhone) {
                 console.log("You check your phone. Everything looks normal.");
+            } else {
+                console.log("You check your pockets...");
+                console.log("Your phone is missing. You must have dropped it somewhere.");
             }
-            street(user, hasPhone); // go back but now message makes sense
+            street(user, hasPhone); // stay on street so player can choose again
             return;
 
         case "2":
-            home(user, hasPhone);
+            home(user, hasPhone); // move forward to home scene
             return;
 
         case "3":
-            startGame(user);
+            startGame(user); // go back to start
             return;
 
         default:
@@ -143,11 +143,14 @@ function home(user, hasPhone) {
             return;
         case "2":
             if (hasPhone) {
-                console.log("You call someone inside. They let you in.");
+                console.log("You call someone inside.");
+                console.log("They come and open the door.");
                 endGame("Normal Ending");
             } else {
-                console.log("You don't have your phone.");
-                home(user, hasPhone);
+                console.log("You reach for your phone...");
+                console.log("It's not there.");
+                console.log("You must have lost it somewhere.");
+                home(user, hasPhone); // let player try again
             }
             return;
         case "3":
