@@ -56,16 +56,23 @@ function street(user, hasPhone) {
 
     switch (choice) {
         case "1":
-            console.log("You reach into your pocket...");
-            console.log("Your phone isn't there.");
-            street(user, hasPhone);
+            if (!hasPhone) {
+                console.log("You check your pocket...");
+                console.log("Your phone is missing. You must have dropped it.");
+            } else {
+                console.log("You check your phone. Everything looks normal.");
+            }
+            street(user, hasPhone); // go back but now message makes sense
             return;
+
         case "2":
             home(user, hasPhone);
             return;
+
         case "3":
             startGame(user);
             return;
+
         default:
             console.log("That is not a valid choice.");
             street(user, hasPhone);
