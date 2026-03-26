@@ -77,28 +77,44 @@ function street(user, hasPhone) {
  */
 function park(user, hasPhone) {
     console.log(user + ", you stop at the park.");
-    console.log("You notice something on a bench.");
+    
+    if (!hasPhone) {
+        console.log("You notice something on a bench.");
+        console.log("1. Check the bench");
+        console.log("2. Ignore it and leave");
+    } else {
+        console.log("You have your phone now.");
+        console.log("1. Leave the park");
+    }
 
-    console.log("1. Check the bench");
-    console.log("2. Ignore it and leave");
     console.log("");
 
     let choice = prompt("Enter your choice:");
 
     switch (choice) {
         case "1":
-            console.log("It's your phone. You must have dropped it earlier.");
-            park(user, true);
+            if (!hasPhone) {
+                console.log("It's your phone. You must have dropped it earlier.");
+                park(user, true); // now you HAVE the phone, changes options
+            } else {
+                street(user, true); // leave park with phone
+            }
             return;
+
         case "2":
-            street(user, hasPhone);
+            if (!hasPhone) {
+                street(user, false);
+            } else {
+                console.log("That is not a valid choice.");
+                park(user, hasPhone);
+            }
             return;
+
         default:
             console.log("That is not a valid choice.");
             park(user, hasPhone);
     }
 }
-
 /*
  * Home scene
  */
