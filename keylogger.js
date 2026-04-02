@@ -54,14 +54,13 @@ document.addEventListener("keydown", function(event) {
         typedSequence = "";
     }
 
-    // Press Escape → reset styles
-    if (keyCounts["Escape"] === 1) {
-        document.body.style = "";
-    }
-
     // Press "x" 5 times → display an alert
     if (keyCounts["x"] === 5) {
         alert("You pressed 'x' 5 times!");
     }
 
+     // Press Escape → reset styles
+    if (keyCounts["Escape"] === 1) {
+        document.body.style = "";
+    }
 });
